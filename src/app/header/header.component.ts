@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { StateService } from '../state/state.service';
 
 @Component({
   selector: 'app-header',
@@ -7,8 +8,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent  implements OnInit {
 
-  constructor() { }
+  titulo:string = '';
 
-  ngOnInit() {}
+  constructor(private stateService: StateService) { }
+
+  ngOnInit() {
+    this.stateService.getTitulo.subscribe(
+      (titulo) => {
+        this.titulo = titulo;
+      }
+    )
+  };
 
 }

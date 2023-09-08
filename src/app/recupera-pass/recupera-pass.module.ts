@@ -7,6 +7,7 @@ import { IonicModule } from '@ionic/angular';
 import { RecuperaPassPageRoutingModule } from './recupera-pass-routing.module';
 
 import { RecuperaPassPage } from './recupera-pass.page';
+import { HeaderModule } from '../header/header.module';
 
 @NgModule({
   imports: [
@@ -14,7 +15,8 @@ import { RecuperaPassPage } from './recupera-pass.page';
     FormsModule,
     IonicModule,
     RecuperaPassPageRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HeaderModule
   ],
   declarations: [RecuperaPassPage]
 })

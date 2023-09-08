@@ -1,4 +1,4 @@
-
+<app-header></app-header>
 <ion-content class="ion-padding">
 
   <form [formGroup]="formIngresarUsuario">
@@ -28,11 +28,11 @@
         color="primary"
         (click)="ingresarUsuario()"
       >INGRESAR</ion-button>
+      <ion-button
+        color="warning"
+        (click)="irARecuperar()"
+      >RECUPERAR</ion-button>
 
   </form>
 </ion-content>
 
-<!-- <ion-button
-  color="warning"
-  (click)="irARecuperar()"
->RECUPERAR</ion-button> -->

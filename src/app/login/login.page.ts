@@ -38,4 +38,8 @@ export class LoginPage implements OnInit {
     this.router.navigate(['home']);
   }
 
+  irARecuperar() {
+    this.router.navigate(['recupera-pass']);
+  }
+
 }
