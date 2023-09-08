@@ -1,13 +1,38 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>login</ion-title>
-  </ion-toolbar>
-</ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">login</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content class="ion-padding">
+
+  <form [formGroup]="formIngresarUsuario">
+
+        <ion-input
+          label="Nombre de usuario: "
+          formControlName="nombre"
+          placeholder="Ingrese nombre de usuario"
+          type="text"
+          label-placement="floating"
+          fill="outline"
+        ></ion-input>
+        <br>
+
+        <ion-input
+          label="Contraseña: "
+          formControlName="password"
+          placeholder="Ingrese Contraseña"
+          type="password"
+          label-placement="floating"
+          fill="outline"
+        ></ion-input>
+        <br>
+
+
+      <ion-button
+        color="primary"
+        (click)="ingresarUsuario()"
+      >INGRESAR</ion-button>
+
+  </form>
 </ion-content>
+
+<!-- <ion-button
+  color="warning"
+  (click)="irARecuperar()"
+>RECUPERAR</ion-button> -->
