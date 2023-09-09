@@ -54,7 +54,7 @@ export class LoginPage implements OnInit {
 
     const nombre = usuario.nombre;
 
-    this.stateService.seTitulo = 'Homepage'
+    this.stateService.setTitulo = 'Homepage'
     this.stateService.setNombre = nombre;
     this.router.navigate(['home']);
     
@@ -62,7 +62,7 @@ export class LoginPage implements OnInit {
 
   irARecuperar() {
     this.stateService.setNombre = 'invitado'
-    this.stateService.seTitulo = 'Recuperar contraseña'
+    this.stateService.setTitulo = 'Recuperar contraseña'
     this.router.navigate(['recupera-pass']);
   }
 

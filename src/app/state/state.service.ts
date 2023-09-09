@@ -19,7 +19,7 @@ export class StateService {
     return this.nombre.asObservable();
   }
 
-  set seTitulo(titulo:string){
+  set setTitulo(titulo:string){
     this.titulo.next(titulo);
   }
 

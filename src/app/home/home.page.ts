@@ -9,13 +9,7 @@ import { Router } from '@angular/router';
 })
 export class HomePage {
 
-  nombre:string = '';
-
-  constructor(private stateService: StateService, private router: Router) {
-    if(this.nombre === ''){
-      this.router.navigate(['login']);
-    }
-  }
+  nombre:string = 'invitado';
 
   ngOnInit() {
     this.stateService.getNombre.subscribe(
@@ -24,4 +18,12 @@ export class HomePage {
       }
     )
   }
+
+  constructor(private stateService: StateService, private router: Router) {
+    if(this.nombre === ''){
+      this.router.navigate(['login']);
+    }
+  }
+
+  
 }
