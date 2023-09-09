@@ -18,10 +18,10 @@ export class LoginPage implements OnInit {
   formIngresarUsuario: FormGroup; //Declarando formulario reactivo
   nombre:string = '';
   
-  // usuario1: Usuario = {
-  //   nombre: 'Jose',
-  //   password: '1234'
-  // }
+  usuario1: Usuario = {
+    nombre: 'Jose',
+    password: '1234'
+  }
 
 
   constructor(private fb: FormBuilder, private router: Router, private stateService: StateService) {
@@ -40,6 +40,16 @@ export class LoginPage implements OnInit {
     const usuario = {
       nombre: this.formIngresarUsuario.get('nombre')?.value,
       password: this.formIngresarUsuario.get('password')?.value
+    }
+
+    if(usuario.nombre === '' || usuario.password === ''){
+      alert('Debes llenar todos los campos')
+      return;
+    }
+
+    if(usuario.nombre != this.usuario1.nombre ||usuario.password != this.usuario1.password){
+      alert('Usuario o contraseña incorrecto, vuelve a intentarlo');
+      return;
     }
 
     const nombre = usuario.nombre;

@@ -28,6 +28,11 @@ export class RecuperaPassPage implements OnInit {
       nombre: this.formularioRecuperacion.get('nombre')?.value,
     }
 
+    if(usuario.nombre === ''){
+      alert('Debes ingresar tu nombre de usuario');
+      return;
+    }
+
     const nombre = usuario.nombre;
 
     this.stateService.setNombre = 'invitado'
