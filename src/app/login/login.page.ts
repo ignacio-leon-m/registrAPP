@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
+import { StateService } from '../state/state.service';
 
 interface Usuario {
   nombre: string;
@@ -15,14 +16,15 @@ interface Usuario {
 export class LoginPage implements OnInit {
 
   formIngresarUsuario: FormGroup; //Declarando formulario reactivo
+  nombre:string = '';
   
-  usuario1: Usuario = {
-    nombre: 'Jose',
-    password: '1234'
-  }
+  // usuario1: Usuario = {
+  //   nombre: 'Jose',
+  //   password: '1234'
+  // }
 
 
-  constructor(private fb: FormBuilder, private router: Router) {
+  constructor(private fb: FormBuilder, private router: Router, private stateService: StateService) {
     this.formIngresarUsuario = this.fb.group(
       {
         nombre: [""],
@@ -35,11 +37,27 @@ export class LoginPage implements OnInit {
   }
 
   ingresarUsuario(){
+    const usuario = {
+      nombre: this.formIngresarUsuario.get('nombre')?.value,
+      password: this.formIngresarUsuario.get('password')?.value
+    }
+
+    const nombre = usuario.nombre;
+
+    this.stateService.seTitulo = 'Homepage'
+    this.stateService.setNombre = nombre;
     this.router.navigate(['home']);
+    
   }
 
   irARecuperar() {
+    this.stateService.setNombre = 'invitado'
+    this.stateService.seTitulo = 'Recuperar contraseña'
     this.router.navigate(['recupera-pass']);
+  }
+
+  recuperarUsuario(){
+    
   }
 
 }
