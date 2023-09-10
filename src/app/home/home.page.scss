@@ -25,3 +25,20 @@
 #container a {
   text-decoration: none;
 }
+
+.centered-image {
+  max-width: 100%; // Ajusta el ancho máximo de la imagen según sea necesario
+  display: block; // 
+  margin: 0 auto; // Centra la imagen horizontalmente
+  // Ajusta el tamaño de la imagen para hacerla más pequeña
+  width: 50%; // Puedes cambiar este valor según tus preferencias
+}
+
+ion-card {
+  max-width: 80%; // Ajusta el valor según sea necesario
+  margin: 0 auto; // Centra la tarjeta horizontalmente
+}
+
+body {
+  width: 100%; 
+}
