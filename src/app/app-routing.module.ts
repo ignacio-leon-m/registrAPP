@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
+import { LoginGuard } from './login/login.guard';
 
 const routes: Routes = [
   {
@@ -19,6 +20,12 @@ const routes: Routes = [
     path: 'recupera-pass',
     loadChildren: () => import('./recupera-pass/recupera-pass.module').then( m => m.RecuperaPassPageModule)
   },
+  {
+    path: 'private',
+    canActivate: [LoginGuard],
+    loadChildren: () => import('./private/private.module').then( m => m.PrivatePageModule)
+  },
+
 ];
 
 @NgModule({
